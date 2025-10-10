@@ -1,0 +1,59 @@
+# ---------- OS / IDE ----------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ---------- Composer ----------
+/vendor/
+
+# ---------- Drupal (docroot à la racine) ----------
+/core/
+/modules/contrib/
+/profiles/contrib/
+/themes/contrib/
+/sites/*/files/
+/sites/*/private/
+/sites/simpletest
+/sites/*/settings*.php
+/sites/*/services*.yml
+!sites/example.settings.local.php
+!sites/example.sites.php
+!sites/development.services.yml
+
+# ---------- Drupal (docroot dans ./web) ----------
+/web/core/
+/web/modules/contrib/
+/web/profiles/contrib/
+/web/themes/contrib/
+/web/sites/*/files/
+/web/sites/*/private/
+/web/sites/simpletest
+/web/sites/*/settings*.php
+/web/sites/*/services*.yml
+!web/sites/example.settings.local.php
+!web/sites/example.sites.php
+!web/sites/development.services.yml
+
+# ---------- Drush & logs ----------
+/drush/backups/
+/*-debug.log
+/web/*-debug.log
+*.log
+
+# ---------- Builds front (thèmes/modules custom) ----------
+/themes/custom/**/dist/
+/themes/custom/**/.cache/
+/web/themes/custom/**/dist/
+/web/themes/custom/**/.cache/
+
+# ---------- Node (si build front) ----------
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# ---------- Divers ----------
+.cache/
+.env
+.env.local
