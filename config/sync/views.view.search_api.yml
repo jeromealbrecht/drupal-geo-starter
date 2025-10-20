@@ -88,10 +88,10 @@ display:
             label: "q"
             identifier: q
       sorts: {}
-  rest_export_1:
-    display_plugin: rest_export
-    id: rest_export_1
-    display_title: "REST export"
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: "Page"
     position: 1
     display_options:
       path: "api/search"
@@ -100,9 +100,9 @@ display:
         options:
           items_per_page: 9
       style:
-        type: serializer
-        options:
-          formats:
-            json: json
+        type: default
       row:
-        type: fields
+        type: Fields
+      defaults:
+        style: false
+        row: false
