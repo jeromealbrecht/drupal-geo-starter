@@ -1,0 +1,29 @@
+/* Jerome Theme global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #111827; /* neutral-900 */
+}
+
+a {
+  color: #065f46; /* emerald-800 */
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #047857; /* emerald-700 */
+}
+
+.site-header, header[role="banner"] {
+  background: #111827; /* neutral-900 */
+  color: #fff;
+}
+
+footer[role="contentinfo"] {
+  background: #111827;
+  color: #cbd5e1;
+}
+
