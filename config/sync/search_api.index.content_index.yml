@@ -1,0 +1,114 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - search_api
+id: content_index
+name: "Content Index"
+description: "Index for all content types"
+read_only: false
+field_settings:
+  search_api_datasource:
+    plugin_id: "entity:node"
+    settings:
+      bundles:
+        - article
+        - page
+      languages:
+        - "en"
+      default: true
+  search_api_indexed_language:
+    plugin_id: "language"
+    settings:
+      default: true
+  search_api_fulltext:
+    plugin_id: "text"
+    settings:
+      boost: "1.0"
+      fields:
+        - title
+        - body
+  search_api_url:
+    plugin_id: "uri"
+    settings: {}
+datasource_settings:
+  entity:node:
+    bundles:
+      - article
+      - page
+    languages:
+      - "en"
+    default: true
+processor_settings:
+  add_url:
+    plugin_id: "add_url"
+    settings: {}
+  entity_status:
+    plugin_id: "entity_status"
+    settings: {}
+  rendered_item:
+    plugin_id: "rendered_item"
+    settings:
+      view_mode:
+        - full
+      roles:
+        - anonymous
+server: database_server
+options:
+  index_directly: false
+  cron_limit: 50
+  data_alter_callbacks:
+    search_api_alter_callback_add_aggregated_content:
+      status: true
+      weight: 0
+      settings: {}
+    search_api_alter_callback_add_entity_label:
+      status: true
+      weight: 0
+      settings: {}
+    search_api_alter_callback_add_entity_url:
+      status: true
+      weight: 0
+      settings: {}
+    search_api_alter_callback_add_hierarchy:
+      status: true
+      weight: 0
+      settings: {}
+    search_api_alter_callback_add_viewed_entity:
+      status: true
+      weight: 0
+      settings: {}
+  fields:
+    search_api_datasource:
+      type: string
+    search_api_language:
+      type: string
+    search_api_url:
+      type: uri
+    title:
+      type: text
+    body:
+      type: text
+    created:
+      type: date
+    changed:
+      type: date
+    author:
+      type: integer
+    status:
+      type: boolean
+    promote:
+      type: boolean
+    sticky:
+      type: boolean
+    nid:
+      type: integer
+    uuid:
+      type: string
+    vid:
+      type: integer
+    type:
+      type: string
+    langcode:
+      type: string
