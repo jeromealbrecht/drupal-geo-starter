@@ -16,10 +16,12 @@
     ],
     "require": {
         "composer/installers": "^2.3",
+        "drupal/admin_toolbar": "3.5",
         "drupal/core-composer-scaffold": "^11.2",
         "drupal/core-project-message": "^11.2",
         "drupal/core-recipe-unpack": "^11.2",
         "drupal/core-recommended": "^11.2",
+        "drupal/gin": "3",
         "drupal/jsonapi_search_api": "^1.0@RC",
         "drupal/search_api": "^1.39",
         "drupal/search_api_db": "^1.39"
