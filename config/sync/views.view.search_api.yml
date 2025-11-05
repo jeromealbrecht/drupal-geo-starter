@@ -88,21 +88,25 @@ display:
             label: "q"
             identifier: q
       sorts: {}
-  page_1:
-    display_plugin: page
-    id: page_1
-    display_title: "Page"
+  rest_export_1:
+    display_plugin: rest_export
+    id: rest_export_1
+    display_title: "REST export"
     position: 1
     display_options:
       path: "api/search"
       pager:
         type: some
         options:
-          items_per_page: 9
+          items_per_page: 20
+          offset: 0
       style:
-        type: default
+        type: serializer
+        options:
+          formats:
+            - json
       row:
-        type: Fields
+        type: data_field
       defaults:
         style: false
         row: false
